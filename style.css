@@ -1,0 +1,200 @@
+/* ==========================================================================
+   VARIABLES DE DISEÑO BASADAS EXACTAMENTE EN EL MANUAL DE IDENTIDAD
+   ========================================================================== */
+:root {
+    --mya-gold-light: #FFD43E;  /* Tono claro paleta */
+    --mya-gold: #FFC600;        /* Dorado principal */
+    --mya-gold-dark: #BF930D;   /* Dorado oscuro de contornos */
+    --mya-dark-bg: #30302E;     /* Gris oscuro dominante */
+    --mya-gray-muted: #565654;  /* Gris de lecturas secundarias */
+    --mya-light-bg: #F8F9FA;
+    --mya-white: #FFFFFF;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212; /* Negro profundo para excelente legibilidad de la app */
+    color: var(--mya-white);   /* Texto por defecto en blanco para alto contraste */
+    overflow-x: hidden;
+}
+
+/* Tipografía Exclusiva para Títulos (Elegancia y Jerarquía) */
+h1, h2, h3, .font-elegante {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   SISTEMA DE ESTRUCTURA Y MENÚ LATERAL RETRAÍBLE (TOGGLE)
+   ========================================================================== */
+#wrapper {
+    overflow-x: hidden;
+    display: flex;
+    width: 100vw;
+}
+
+/* Estructura Base del Sidebar */
+#sidebar-wrapper {
+    width: 280px;
+    min-width: 280px;
+    background-color: #1e1e1e; /* Gris premium oscuro de fondo de barra */
+    min-height: calc(100vh - 76px);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    margin-left: 0;
+    transition: margin-left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Base del Panel de Contenido Dinámico con Soporte Flexbox Vertical para el Footer */
+#page-content-wrapper {
+    min-width: 0;
+    background-color: #121212;
+    min-height: calc(100vh - 76px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* CLASE QUE ACTIVA LA RETRACCIÓN DEL MENÚ (Se inyecta con JS) */
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -280px;
+}
+
+/* Estilo del Botón Hamburguesa del Menú */
+#toggleSidebar {
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+#toggleSidebar:hover {
+    background-color: rgba(255, 198, 0, 0.1);
+}
+
+/* ==========================================================================
+   OPTIMIZACIÓN DE DISEÑO HORIZONTAL INFERIOR (ESTILO CAPTURA DE PANTALLA)
+   ========================================================================== */
+.layout-contacto {
+    min-height: calc(100vh - 130px);
+}
+
+/* Generación de clase personalizada para dividir perfectamente en 5 columnas en pantallas grandes (100% / 5 = 20%) */
+@media (min-width: 992px) {
+    .col-lg-2-5 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+.small-title-datos {
+    font-size: 0.85rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.x-small-text {
+    font-size: 0.75rem !important;
+    line-height: 1.5;
+    opacity: 0.95;
+}
+
+.fs-mini {
+    font-size: 0.68rem !important;
+    display: block;
+    margin-top: 2px;
+}
+
+.background-datos-inferior {
+    background-color: rgba(20, 20, 20, 0.4);
+    border-radius: 8px 8px 0 0;
+}
+
+/* Border dashed para el helper de la futura imagen */
+.border-dashed {
+    border-style: dashed !important;
+}
+
+/* ==========================================================================
+   COMPONENTES PREMIUM DEL PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.footer-mya {
+    background-color: #1a1a1a;
+    border-top: 1px solid rgba(255, 198, 0, 0.1); /* Delicado filete superior dorado */
+    width: 100%;
+}
+
+/* ==========================================================================
+   COMPONENTES REUTILIZABLES & DETALLES DE INTERFAZ
+   ========================================================================== */
+.navbar-mya {
+    background-color: rgba(30, 30, 30, 0.98);
+    border-bottom: 2px solid var(--mya-gold);
+    backdrop-filter: blur(10px);
+}
+.navbar-mya .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.navbar-mya .nav-link:hover, .navbar-mya .nav-item .nav-link.active {
+    color: var(--mya-gold) !important;
+}
+
+/* Efecto de borde dorado que emula el logotipo */
+.border-mya-gold {
+    border: 2px solid var(--mya-gold);
+    position: relative;
+}
+.border-mya-gold::after {
+    content: '';
+    position: absolute;
+    top: 3px; left: 3px; right: 3px; bottom: 3px;
+    border: 1px solid var(--mya-gold-dark);
+    pointer-events: none;
+}
+
+/* Botones Premium */
+.btn-mya-primary {
+    background: linear-gradient(135deg, var(--mya-gold-light), var(--mya-gold-dark));
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 198, 0, 0.3);
+}
+.btn-mya-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 198, 0, 0.5);
+    color: #000000;
+}
+
+/* Clases Útiles e Interacciones */
+.text-purple {
+    color: #b19ffb !important;
+}
+.Logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+.mya-link-hover {
+    transition: color 0.2s ease;
+}
+.mya-link-hover:hover {
+    color: var(--mya-white) !important;
+}
+
+/* Asegura blanco puro y remueve atenuaciones por completo */
+.text-white-50 {
+    color: var(--mya-white) !important;
+    opacity: 1 !important;
+}
