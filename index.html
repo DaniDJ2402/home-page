@@ -17,36 +17,47 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-mya sticky-top navbar-dark py-3">
-        <div class="container-fluid px-4">
-            
-            <button class="btn me-2" id="toggleSidebar" type="button" aria-label="Alternar menú de gestión">
-                <i class="bi bi-list fs-3" style="color: var(--mya-gold);"></i>
-            </button>
+<nav class="navbar navbar-expand-lg navbar-mya sticky-top navbar-dark py-3">
+    <div class="container-fluid px-4">
 
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="Sin_título-removebg-preview.png" alt="Logo M&A" class="Logo">
-                <span class="font-elegante fs-4 text-uppercase ms-2 d-none d-sm-inline" style="color: var(--mya-gold);">M&A</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myaNavbar" aria-controls="myaNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="btn me-2" id="toggleSidebar" type="button" aria-label="Alternar menú de gestión">
+            <i class="bi bi-list fs-3" style="color: var(--mya-gold);"></i>
+        </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="myaNavbar">
-                <ul class="navbar-nav align-items-center gap-2 mt-3 mt-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#contacto">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reservar">Reservar</a></li>
-                    <li class="nav-item d-none d-lg-block">
-                        <a class="nav-link" href="#"><i class="bi bi-bell fs-5"></i></a>
-                    </li>
-                </ul>
-            </div>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="Sin_título-removebg-preview.png" alt="Logo M&A" class="Logo">
+            <span class="font-elegante fs-4 text-uppercase ms-2 d-none d-sm-inline"
+                style="color: var(--mya-gold);">M&A</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myaNavbar"
+            aria-controls="myaNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="myaNavbar">
+            <ul class="navbar-nav align-items-center gap-3 mt-3 mt-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reservar">Reservar</a></li>
+
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-outline-warning btn-sm px-3 fw-semibold" href="#">Iniciar Sesión</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-outline-warning btn-sm px-3 fw-semibold" href="#">Registrarse</a>
+                </li>
+
+                <li class="nav-item d-none d-lg-block ms-2">
+                    <a class="nav-link p-0" href="#"><i class="bi bi-bell fs-5"></i></a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <div class="d-flex toggled" id="wrapper">
         
@@ -83,6 +94,7 @@
                         <i class="bi bi-bell-fill me-2" style="color: var(--mya-gold);"></i>
                         <strong>Notificaciones y soporte</strong>
                     </a>
+                </li>
             </ul>
         </div>
 
@@ -90,8 +102,57 @@
             
             <div class="container-fluid py-4 flex-grow-1 d-flex flex-column justify-content-between layout-contacto">
                 
+                <!-- CONTENEDOR DEL CARRUSEL TOTALMENTE CENTRADO -->
                 <div class="container my-auto py-4">
-                    <img src="Code_Generated_Image.png" alt="Interior M&A Barberia" class="img-fluid d-block mx-auto rounded shadow">
+                    <div id="carouselMya" class="carousel slide carousel-fade shadow-lg rounded" data-bs-ride="carousel">
+                        
+                        <!-- Indicadores inferiores (puntitos) -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselMya" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselMya" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselMya" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        
+                        <!-- Diapositivas (Imágenes) -->
+                        <div class="carousel-inner rounded">
+                            <!-- Diapositiva 1 (Imagen Optimizada del Interior) -->
+                            <div class="carousel-item active" data-bs-interval="3000">
+                                <img src="Code_Generated_Image.png" class="d-block w-100 img-fluid object-fit-cover" alt="Interior M&A Barberia" style="height: 450px;">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2 px-3">
+                                    <h5 style="color: var(--mya-gold);">Nuestras Instalaciones</h5>
+                                    <p class="small m-0">Un espacio de confort diseñado con estilo tradicional y urbano.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Diapositiva 2 (Espacio reservado para Foto de Cortes/Servicios) -->
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="joven-barberia-cortando-cabello_1303-26254.avif" class="d-block w-100 img-fluid object-fit-cover" alt="Servicios de Barbería" style="max-height: 450px; filter: hue-rotate(15deg) brightness(0.9);">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2 px-3">
+                                    <h5 style="color: var(--mya-gold);">Cortes de Autor</h5>
+                                    <p class="small m-0">Técnicas clásicas y tendencias modernas adaptadas a tu estilo.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Diapositiva 3 (Espacio reservado para Productos/Detalles) -->
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="5-iideas-para-decorar-tu-barberia-flowww.png" class="d-block w-100 img-fluid object-fit-cover" alt="Productos M&A" style="max-height: 450px; filter: saturate(1.2) contrast(1.1);">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2 px-3">
+                                    <h5 style="color: var(--mya-gold);">Productos Premium</h5>
+                                    <p class="small m-0">Cuidamos tu cabello y barba con los mejores componentes del mercado.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Controles de Flechas Izquierda y Derecha -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMya" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselMya" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="container-fluid pt-4 px-4 border-top border-light border-opacity-10 mt-auto background-datos-inferior">
@@ -144,7 +205,7 @@
                             </div>
                             <ul class="list-unstyled text-white x-small-text ps-0 m-0">
                                 <li>• Cra. 15 #123-45, Bogotá, Colombia</li>
-                                <li class="text-white italic fs-mini">(Mapa de Google incrustado con la ubicación exacta)</li>
+                                <li>• <span class="text-white italic fs-mini">(Mapa de Google incrustado con la ubicación exacta)</span></li>
                             </ul>
                         </div>
 
@@ -160,8 +221,6 @@
                         </div>
 
                     </div>
-
-                   
 
                 </div>
             </div>
